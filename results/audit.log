@@ -1,0 +1,7 @@
+records 2110
+B1 L 300
+train windows 4150
+Traceback (most recent call last):
+  File "/home/sandbox/doc230-cbio045/src/audit.py", line 5, in <module>
+    mid=S.split("def predict_record")[1].split("for name,rs in (('d2_cold'")[0]
+AttributeError: 'int' object has no attribute 'split'

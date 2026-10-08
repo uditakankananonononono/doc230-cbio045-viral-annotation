@@ -1,8 +1,8 @@
 import json
-S=open('src/run.py').read()
-pre=S.split("net=Net(); opt")[0]
+SRC=open('src/run.py').read()
+pre=SRC.split("net=Net(); opt")[0]
 exec(pre)
-mid=S.split("def predict_record")[1].split("for name,rs in (('d2_cold'")[0]
+mid=SRC.split("def predict_record")[1].split("for name,rs in (('d2_cold'")[0]
 exec("def predict_record"+mid)
 import pyrodigal
 gf=pyrodigal.GeneFinder(meta=True)
