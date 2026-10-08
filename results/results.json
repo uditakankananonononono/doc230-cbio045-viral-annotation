@@ -1,0 +1,167 @@
+{
+ "d1": {
+  "n_records": 2110,
+  "n_groups": 72,
+  "mean_len": 5207,
+  "coding_fraction": 0.893,
+  "overlapping_fraction": 0.276,
+  "n_train": 400,
+  "n_test_cold": 200,
+  "n_test_random": 200,
+  "held_out_groups": 18
+ },
+ "d7": {
+  "150": 0.943,
+  "300": 0.965,
+  "450": 0.964,
+  "600": 0.954,
+  "900": 0.902
+ },
+ "b1_L_chosen_on_train": 300,
+ "d2_cold": {
+  "n_records": 200,
+  "n_bases": 1002444,
+  "coding_fraction": 0.926,
+  "ORF": {
+   "f1": 0.987,
+   "mcc": 0.816
+  },
+  "KmerLR": {
+   "f1": 0.961,
+   "mcc": 0.0,
+   "auroc": 0.563
+  },
+  "Net": {
+   "f1": 0.962,
+   "mcc": 0.315,
+   "auroc": 0.807
+  }
+ },
+ "d2_cold_per": null,
+ "d3_random": {
+  "n_records": 200,
+  "n_bases": 988895,
+  "coding_fraction": 0.881,
+  "ORF": {
+   "f1": 0.964,
+   "mcc": 0.658
+  },
+  "KmerLR": {
+   "f1": 0.937,
+   "mcc": 0.0,
+   "auroc": 0.538
+  },
+  "Net": {
+   "f1": 0.939,
+   "mcc": 0.225,
+   "auroc": 0.795
+  }
+ },
+ "d3_random_per": null,
+ "d2_gate_net_beats_best_baseline_by_0.02": false,
+ "d3_gate_gap_le_0.05": true,
+ "d4_per_group": {
+  "Alsuviricetes": {
+   "n": 18,
+   "f1_net": 0.962,
+   "f1_orf": 0.991
+  },
+  "Caudoviricetes": {
+   "n": 3,
+   "f1_net": 0.82,
+   "f1_orf": 0.913
+  },
+  "Howeltoviricetes": {
+   "n": 6,
+   "f1_net": 0.882,
+   "f1_orf": 0.951
+  },
+  "Kobbarisatellite": {
+   "n": 1,
+   "f1_net": 0.929,
+   "f1_orf": 0.895
+  },
+  "Permutotetraviridae": {
+   "n": 1,
+   "f1_net": 0.975,
+   "f1_orf": 0.982
+  },
+  "Pisoniviricetes": {
+   "n": 23,
+   "f1_net": 0.945,
+   "f1_orf": 0.991
+  },
+  "Polyploviricotina": {
+   "n": 121,
+   "f1_net": 0.949,
+   "f1_orf": 0.982
+  },
+  "Stelpaviricetes": {
+   "n": 26,
+   "f1_net": 0.969,
+   "f1_orf": 0.998
+  },
+  "Vidaverviricetes": {
+   "n": 1,
+   "f1_net": 0.904,
+   "f1_orf": 0.941
+  }
+ },
+ "d5_gc": {
+  "(0.0, 0.4]": {
+   "n": 72,
+   "f1_net": 0.941,
+   "f1_orf": 0.98
+  },
+  "(0.4, 0.5]": {
+   "n": 114,
+   "f1_net": 0.953,
+   "f1_orf": 0.988
+  },
+  "(0.5, 0.6]": {
+   "n": 13,
+   "f1_net": 0.941,
+   "f1_orf": 0.965
+  },
+  "(0.6, 1.0]": {
+   "n": 1,
+   "f1_net": 0.979,
+   "f1_orf": 0.99
+  }
+ },
+ "d8_fraction_errors_within_30nt_of_cds_edge": 0.362,
+ "d9_overlap": {
+  "False": {
+   "n": 171,
+   "f1_net": 0.95,
+   "f1_orf": 0.985
+  },
+  "True": {
+   "n": 29,
+   "f1_net": 0.936,
+   "f1_orf": 0.976
+  }
+ },
+ "d10_length": {
+  "(0, 3000]": {
+   "n": 77,
+   "f1_net": 0.917,
+   "f1_orf": 0.974
+  },
+  "(3000, 7000]": {
+   "n": 87,
+   "f1_net": 0.971,
+   "f1_orf": 0.991
+  },
+  "(7000, 12000]": {
+   "n": 20,
+   "f1_net": 0.97,
+   "f1_orf": 0.994
+  },
+  "(12000, 20001]": {
+   "n": 16,
+   "f1_net": 0.948,
+   "f1_orf": 0.976
+  }
+ }
+}
