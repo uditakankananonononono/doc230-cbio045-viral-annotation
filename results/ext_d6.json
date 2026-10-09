@@ -1,0 +1,158 @@
+{
+ "C900": {
+  "W": 900,
+  "epochs": 3,
+  "n_windows": 4150,
+  "seeds": {
+   "0": {
+    "steps": 390,
+    "cold": {
+     "f1": 0.962,
+     "mcc": 0.315,
+     "auroc": 0.807
+    },
+    "random": {
+     "f1": 0.939,
+     "mcc": 0.225,
+     "auroc": 0.795
+    }
+   },
+   "1": {
+    "steps": 390,
+    "cold": {
+     "f1": 0.963,
+     "mcc": 0.191,
+     "auroc": 0.8
+    },
+    "random": {
+     "f1": 0.938,
+     "mcc": 0.097,
+     "auroc": 0.786
+    }
+   },
+   "2": {
+    "steps": 390,
+    "cold": {
+     "f1": 0.957,
+     "mcc": 0.237,
+     "auroc": 0.767
+    },
+    "random": {
+     "f1": 0.936,
+     "mcc": 0.173,
+     "auroc": 0.75
+    }
+   }
+  },
+  "cold_mcc_mean": 0.248,
+  "cold_mcc_sd": 0.051,
+  "random_mcc_mean": 0.165,
+  "random_mcc_sd": 0.053
+ },
+ "C300": {
+  "W": 300,
+  "epochs": 3,
+  "n_windows": 12864,
+  "seeds": {
+   "0": {
+    "steps": 1206,
+    "cold": {
+     "f1": 0.956,
+     "mcc": 0.363,
+     "auroc": 0.809
+    },
+    "random": {
+     "f1": 0.932,
+     "mcc": 0.322,
+     "auroc": 0.785
+    }
+   },
+   "1": {
+    "steps": 1206,
+    "cold": {
+     "f1": 0.951,
+     "mcc": 0.343,
+     "auroc": 0.803
+    },
+    "random": {
+     "f1": 0.93,
+     "mcc": 0.322,
+     "auroc": 0.775
+    }
+   },
+   "2": {
+    "steps": 1206,
+    "cold": {
+     "f1": 0.961,
+     "mcc": 0.345,
+     "auroc": 0.795
+    },
+    "random": {
+     "f1": 0.94,
+     "mcc": 0.295,
+     "auroc": 0.777
+    }
+   }
+  },
+  "cold_mcc_mean": 0.35,
+  "cold_mcc_sd": 0.009,
+  "random_mcc_mean": 0.313,
+  "random_mcc_sd": 0.013
+ },
+ "C300s": {
+  "W": 300,
+  "epochs": 1,
+  "n_windows": 12864,
+  "seeds": {
+   "0": {
+    "steps": 402,
+    "cold": {
+     "f1": 0.96,
+     "mcc": 0.233,
+     "auroc": 0.765
+    },
+    "random": {
+     "f1": 0.937,
+     "mcc": 0.167,
+     "auroc": 0.755
+    }
+   },
+   "1": {
+    "steps": 402,
+    "cold": {
+     "f1": 0.961,
+     "mcc": 0.246,
+     "auroc": 0.78
+    },
+    "random": {
+     "f1": 0.937,
+     "mcc": 0.145,
+     "auroc": 0.757
+    }
+   },
+   "2": {
+    "steps": 402,
+    "cold": {
+     "f1": 0.96,
+     "mcc": 0.195,
+     "auroc": 0.73
+    },
+    "random": {
+     "f1": 0.937,
+     "mcc": 0.135,
+     "auroc": 0.71
+    }
+   }
+  },
+  "cold_mcc_mean": 0.225,
+  "cold_mcc_sd": 0.022,
+  "random_mcc_mean": 0.149,
+  "random_mcc_sd": 0.013
+ },
+ "gate": {
+  "delta_C300": 0.102,
+  "delta_C300s": -0.023,
+  "met": false,
+  "confounded_by_steps": true
+ }
+}

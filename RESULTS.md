@@ -17,3 +17,13 @@ Prereg AUDIT_PREREG.md committed before running (one variable-name fix to audit.
 - A2 Net over seeds 0,1,2: cold F1 0.961 (sd 0.002), MCC 0.248 (sd 0.051), AUROC 0.791 (sd 0.017); random F1 0.937, MCC 0.165 (sd 0.053), AUROC 0.777. Seed 0 is the best of three, so the original MCC 0.315 was optimistic; the seed-mean is 0.248.
 - A3 cold set excluding Polyploviricotina (47% of cold bases; 526,644 bases, other groups): Net F1 0.953 / MCC 0.277, ORF 0.984 / 0.794, pyrodigal 0.987 / 0.844. The ranking is the same without the dominant group.
 D2 stays "NOT met" and is now clearer: not a close call. D3 ("gap <= 0.05, met") remains technically true but is not evidence of strength. No claim that RNNs are generally worse: this was 3 epochs, 400 training records, one architecture, CPU.
+
+## Extension D6: window-size ablation (PREREG_EXT.md and src/ext_d6.py committed together at 71944c5 before any score; results/ext_d6.json, ext_d6.log)
+Same data, splits, test sets and net as run.py; only the window changes (stride W/2). 3 torch seeds each; seed 0 of C900 reproduced the original cold MCC 0.315 exactly. A first launch was lost mid-run (workspace) and rerun from scratch; its partial output is kept in results/ext_d6_run1_partial.*.
+| Config | Windows | Optimizer steps | Cold MCC mean (sd) | Cold AUROC (3 seeds) | Random-split MCC mean (sd) |
+|---|---|---|---|---|---|
+| C900 (W=900, 3 ep) | 4,150 | 390 | 0.248 (0.051) | 0.807, 0.800, 0.767 | 0.165 (0.053) |
+| C300 (W=300, 3 ep) | 12,864 | 1,206 | 0.350 (0.009) | 0.809, 0.803, 0.795 | 0.313 (0.013) |
+| C300s (W=300, 1 ep, step-matched) | 12,864 | 402 | 0.225 (0.022) | 0.765, 0.780, 0.730 | 0.149 (0.013) |
+D6 gate (window matters only if C300 and the step-matched C300s both differ from C900 by >= 0.05 in the same direction): NOT MET. C300 is +0.102 over C900, but the step-matched control is -0.023 (inside C900's seed sd of 0.051). The W=300 gain therefore tracks the 3x training steps, not the window length: with steps matched there is no detectable window effect, and at W=300 going from 402 to 1,206 steps lifts cold MCC from 0.225 to 0.350. Read this as "the net is undertrained at 3 epochs", not as a window result.
+Limits: 3 seeds, two window sizes only (W>900 would drop records shorter than W under run.py's windowing), one train set of 400 records, cold test set dominated by one lineage group. Even the best config (cold MCC 0.35) stays far below pyrodigal (0.856) and the ORF caller (0.816), so the audit finding that the small net loses to a standard gene caller is unchanged. With D6 run, 045 has all 10 directions run.
